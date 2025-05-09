@@ -3,12 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtonScript : MonoBehaviour
 {
-    public string firstLevelSceneName = "Level1"; // Nama scene level pertama Anda
 
-    public void PlayGame()
+    public void PlayGame(string levelName)
     {
-        Debug.Log("Tombol Play ditekan!");
-        SceneManager.LoadScene(firstLevelSceneName);
+        SceneManager.LoadScene(levelName);
     }
 
     public void QuitGame()
