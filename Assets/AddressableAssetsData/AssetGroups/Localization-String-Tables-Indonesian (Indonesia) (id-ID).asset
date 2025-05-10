@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Indonesian (Indonesia) (id-ID)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Indonesian (Indonesia) (id-ID)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e66c0bc83037ca74b902e7dcca00d42a
+  m_SerializeEntries:
+  - m_GUID: 49ee8d98a0508864fb630061a2012cf6
+    m_Address: DialogueTable_id-ID
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-id-ID
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7108cffcc1d1a7b488ed05995d7dfa46
+    m_Address: MainMenuTable_id-ID
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-id-ID
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4d32cded28a4d1429925644810b134c
+    m_Address: InGameUITable_id-ID
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-id-ID
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: cefc05f65cfc28646a310288e611db39, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 34495eaf2c32ba54fa32dfed87dac9c1, type: 2}
+    - {fileID: 11400000, guid: 251473d385d64504e817c2ae4b61c16f, type: 2}

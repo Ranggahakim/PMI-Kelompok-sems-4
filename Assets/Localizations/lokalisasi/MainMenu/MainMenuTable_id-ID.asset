@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MainMenuTable_id-ID
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: id-ID
+  m_SharedData: {fileID: 11400000, guid: 4d16617ec33fd4847af1af984a52531d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3409361739776
+    m_Localized: Main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3686273884160
+    m_Localized: Pengaturan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4794341892096
+    m_Localized: Keluar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4948943937536
+    m_Localized: Tentang kami :D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5386439204864
+    m_Localized: Pengaturan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5598821982208
+    m_Localized: Sip !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5750202802176
+    m_Localized: 'Batal '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15421538017280
+    m_Localized: 'Bahasa : '
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

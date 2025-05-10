@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -21,6 +23,7 @@ public class DialogueSystem : MonoBehaviour
     public int nextLevelIndex { get; set; }
     public string nextLevelName { get; set; }
 
+    private AsyncOperationHandle<string> localizationOperationHandle;
 
     void Start()
     {
@@ -50,11 +53,8 @@ public class DialogueSystem : MonoBehaviour
             char1.SetActive(true);
             char2.SetActive(false);
 
-
             if (dialogue.charImg != null)
                 char1Img.sprite = dialogue.charImg;
-
-            dialogueText.text = dialogue.dialogueText;
         }
         else
         {
@@ -63,8 +63,42 @@ public class DialogueSystem : MonoBehaviour
 
             if (dialogue.charImg != null)
                 char2Img.sprite = dialogue.charImg;
+        }
 
-            dialogueText.text = dialogue.dialogueText;
+        // Ambil teks yang dilokalisasi berdasarkan dialogueKey
+        if (!string.IsNullOrEmpty(dialogue.dialogueKey) && dialogueText != null)
+        {
+            if (localizationOperationHandle.IsValid())
+            {
+                localizationOperationHandle.Release();
+            }
+
+            localizationOperationHandle = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("DialogueTable", dialogue.dialogueKey); // Ganti dengan nama String Table Anda
+            localizationOperationHandle.Completed += (handle) =>
+            {
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    dialogueText.text = handle.Result;
+                }
+                else
+                {
+                    Debug.LogError($"Gagal melokalisasi teks dengan key '{dialogue.dialogueKey}': {handle.OperationException}");
+                    // Tampilkan key sebagai fallback jika lokalisasi gagal
+                    dialogueText.text = dialogue.dialogueKey;
+                }
+            };
+        }
+        else if (dialogueText != null)
+        {
+            dialogueText.text = "";
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (localizationOperationHandle.IsValid())
+        {
+            localizationOperationHandle.Release();
         }
     }
 }
@@ -80,5 +114,5 @@ public class DialogueCode
 {
     public int charIndex;
     public Sprite charImg;
-    public string dialogueText;
+    public string dialogueKey; // Sudah diubah
 }
