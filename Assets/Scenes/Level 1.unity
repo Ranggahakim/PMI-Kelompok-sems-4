@@ -11621,7 +11621,7 @@ PrefabInstance:
       objectReference: {fileID: 2115334059}
     - target: {fileID: 8640628235798129602, guid: 81d56dfc4859c49479da300255d2cc76, type: 3}
       propertyPath: countdownTime
-      value: 15
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8640628235798129602, guid: 81d56dfc4859c49479da300255d2cc76, type: 3}
       propertyPath: spawnLocation

@@ -19,23 +19,52 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 618337640448
-    m_Localized: Hello brow, it's me, mario
+    m_Localized: "The scent of blood here is so thick\u2026"
     m_Metadata:
       m_Items: []
   - m_Id: 747832582144
-    m_Localized: omg, how are you brow??
+    m_Localized: I didn't expect anyone to come here.
     m_Metadata:
       m_Items: []
   - m_Id: 849938718720
-    m_Localized: It's good, alhamdulillah
+    m_Localized: What brings you here, Chief of the Planning Division?
     m_Metadata:
       m_Items: []
   - m_Id: 882062893056
-    m_Localized: naiss
+    m_Localized: The Chief of the Defense Division?! You!
     m_Metadata:
       m_Items: []
   - m_Id: 896038313984
-    m_Localized: see you next time!
+    m_Localized: Change of plans, I have to leave earlier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763862310912
+    m_Localized: Don't RUN!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29000039374848
+    m_Localized: I need an explanation!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29052954714112
+    m_Localized: I appreciate your enthusiasm in chasing me this far.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29107417751552
+    m_Localized: You must give me an explanation first, Chief of the Defense Division!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29128074698752
+    m_Localized: "There\u2019s no need for you to meddle any further, Chief of the
+      Planning Division."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29145468477440
+    m_Localized: You are not part of my plan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29172735647744
+    m_Localized: STOP!!!
     m_Metadata:
       m_Items: []
   references:

@@ -19,23 +19,52 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 618337640448
-    m_Localized: Halo kawan, ini gw, mario
+    m_Localized: Pekat sekali bau darah disini...
     m_Metadata:
       m_Items: []
   - m_Id: 747832582144
-    m_Localized: Bjir, gimana kabarmu sekarang
+    m_Localized: Tak kusangka akan ada seseorang yang kemari.
     m_Metadata:
       m_Items: []
   - m_Id: 849938718720
-    m_Localized: Alhamdulillah sehat kang
+    m_Localized: 'Apa yang membuatmu kemari Ketua Divisi Perencana? '
     m_Metadata:
       m_Items: []
   - m_Id: 882062893056
-    m_Localized: mantap
+    m_Localized: 'Ketua Divisi Pertahanan?! Kau! '
     m_Metadata:
       m_Items: []
   - m_Id: 896038313984
-    m_Localized: gw lanjut dah ya
+    m_Localized: 'Perubahan rencana, aku harus pergi lebih cepat. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763862310912
+    m_Localized: 'Jangan lari! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29000039374848
+    m_Localized: 'Aku butuh penjelasanmu! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29052954714112
+    m_Localized: 'Ku apresiasi semangatmu hingga mengejarku kemari. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29107417751552
+    m_Localized: Kau harus memberikan penjelasanmu terlebih dahulu, Ketua Divisi
+      Pertahanan!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29128074698752
+    m_Localized: Tidak perlu ikut campur lebih jauh lagi, Ketua Divisi Perencana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29145468477440
+    m_Localized: Kamu bukan dari bagian rencanaku.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29172735647744
+    m_Localized: 'BERHENTI! '
     m_Metadata:
       m_Items: []
   references:
