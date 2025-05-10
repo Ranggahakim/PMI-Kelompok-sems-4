@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - bloodBag
+  - crouchArea
+  - Duri
   layers:
   - Default
   - TransparentFX

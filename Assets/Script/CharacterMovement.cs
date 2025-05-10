@@ -20,6 +20,11 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] GameObject myMesh;
     [SerializeField] Animator myAnimator;
 
+    [Space]
+    [Header("crouching")]
+
+    bool isOnCrouchArea;
+
     void Start()
     {
         originalHeight = controller.height;
@@ -48,16 +53,26 @@ public class CharacterMovement : MonoBehaviour
         // Input Crouch
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
+            myAnimator.SetBool("isCrouch", true);
             isCrouching = true;
             controller.height = originalHeight * crouchScale;
             controller.center = new Vector3(0, 0.37f - originalHeight * (1 - crouchScale) / 2f, 0);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            isCrouching = false;
-            controller.height = originalHeight;
-            controller.center = new Vector3(0, 0.37f, 0);
+            if (!isOnCrouchArea)
+            {
+                DoneCrouch();
+            }
         }
+    }
+
+    void DoneCrouch()
+    {
+        myAnimator.SetBool("isCrouch", false);
+        isCrouching = false;
+        controller.height = originalHeight;
+        controller.center = new Vector3(0, 0.37f, 0);
     }
 
     void FixedUpdate()
@@ -94,5 +109,22 @@ public class CharacterMovement : MonoBehaviour
 
         // Aplikasikan pergerakan
         controller.Move(move + velocity * Time.fixedDeltaTime);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "crouchArea")
+        {
+            isOnCrouchArea = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "crouchArea")
+        {
+            isOnCrouchArea = false;
+            DoneCrouch();
+        }
     }
 }
