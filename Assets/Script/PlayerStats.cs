@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        collectedBodyText.text = $"Collected body : {collectedBody}/{totalCollectedBody}";
+        collectedBodyText.text = $"{collectedBody}/{totalCollectedBody}";
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -36,7 +36,7 @@ public class PlayerStats : MonoBehaviour
         if (countdownTime > 0)
         {
             countdownTime -= Time.deltaTime;
-            timerText.text = $"Waktu tersisa : {countdownTime}s";
+            timerText.text = $"{countdownTime}s";
         }
         else
         {
@@ -49,7 +49,7 @@ public class PlayerStats : MonoBehaviour
     public void ObtainCollectedBody()
     {
         collectedBody++;
-        collectedBodyText.text = $"Collected body : {collectedBody}/{totalCollectedBody}";
+        collectedBodyText.text = $"{collectedBody}/{totalCollectedBody}";
 
         if (collectedBody >= totalCollectedBody)
         {
@@ -64,7 +64,7 @@ public class PlayerStats : MonoBehaviour
             WinPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            timerCountInWinPanel.text = $"Waktu yang dibutuhkan : {countdownTime} detik";
+            timerCountInWinPanel.text = $"{countdownTime} detik";
         }
 
         if (other.gameObject.tag == "Duri")
