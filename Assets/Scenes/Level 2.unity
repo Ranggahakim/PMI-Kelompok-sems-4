@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0
+  m_AmbientIntensity: 0.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -3715,6 +3715,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b127f50eef79f74ea33b98788e954aa, type: 3}
   m_PrefabInstance: {fileID: 433658847}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &435282724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435282725}
+  m_Layer: 0
+  m_Name: Spawn Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &435282725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435282724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.96, y: -7.08, z: 14.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &450467041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6784,6 +6815,33 @@ GameObject:
 --- !u!114 &817982631 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4624639005878278219, guid: 90a5cf15e0660e848a399e847084b792, type: 3}
+  m_PrefabInstance: {fileID: 817982629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &817982632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1262934383076903634, guid: 90a5cf15e0660e848a399e847084b792, type: 3}
+  m_PrefabInstance: {fileID: 817982629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &817982633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6709007134680331009, guid: 90a5cf15e0660e848a399e847084b792, type: 3}
+  m_PrefabInstance: {fileID: 817982629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &817982634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3883427511056139418, guid: 90a5cf15e0660e848a399e847084b792, type: 3}
   m_PrefabInstance: {fileID: 817982629}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -14373,6 +14431,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 817982630}
     - target: {fileID: 8640628235798129602, guid: 81d56dfc4859c49479da300255d2cc76, type: 3}
+      propertyPath: LosePanel
+      value: 
+      objectReference: {fileID: 817982632}
+    - target: {fileID: 8640628235798129602, guid: 81d56dfc4859c49479da300255d2cc76, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 817982634}
+    - target: {fileID: 8640628235798129602, guid: 81d56dfc4859c49479da300255d2cc76, type: 3}
       propertyPath: gateGameObject
       value: 
       objectReference: {fileID: 1494007115}
@@ -14380,6 +14446,10 @@ PrefabInstance:
       propertyPath: collectedBodyText
       value: 
       objectReference: {fileID: 817982631}
+    - target: {fileID: 8640628235798129602, guid: 81d56dfc4859c49479da300255d2cc76, type: 3}
+      propertyPath: timerCountInWinPanel
+      value: 
+      objectReference: {fileID: 817982633}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17076,3 +17146,4 @@ SceneRoots:
   - {fileID: 1494007114}
   - {fileID: 893883028}
   - {fileID: 1080264279}
+  - {fileID: 435282725}
