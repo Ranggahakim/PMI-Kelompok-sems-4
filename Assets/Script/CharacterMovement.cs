@@ -7,12 +7,15 @@ public class CharacterMovement : MonoBehaviour
     public float jumpHeight = 2f;
     public float gravity = -9.81f;
     public float crouchScale = 0.5f;
+    public float groundDamping = 20f; // NEW: How quickly horizontal movement slows down on the ground
+    public float airDamping = 0.5f;   // NEW: How quickly horizontal movement slows down in the air
 
-    private float horizontalMove;
+    private float horizontalInput; // Renamed for clarity
     private Vector3 velocity;
     private bool isJumping;
     private bool isCrouching;
     private float originalHeight;
+    private float currentHorizontalVelocity; // NEW: Stores the actual horizontal velocity
 
     [Space]
 
@@ -33,8 +36,9 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         // Input horizontal
+        horizontalInput = Input.GetAxisRaw("Horizontal"); // Get raw input here
 
-        if (horizontalMove != 0)
+        if (horizontalInput != 0)
         {
             myAnimator.SetBool("isJalan", true);
         }
@@ -56,7 +60,8 @@ public class CharacterMovement : MonoBehaviour
             myAnimator.SetBool("isCrouch", true);
             isCrouching = true;
             controller.height = originalHeight * crouchScale;
-            controller.center = new Vector3(0, 0.37f - originalHeight * (1 - crouchScale) / 2f, 0);
+            // Adjust center based on the new height
+            controller.center = new Vector3(0, originalHeight * crouchScale / 2f, 0);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
@@ -69,26 +74,42 @@ public class CharacterMovement : MonoBehaviour
 
     void DoneCrouch()
     {
+        // Check if there's enough space to stand up before uncrouching
+        // This prevents the player from standing up into an obstacle
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.up, out hit, originalHeight - controller.height, ~LayerMask.GetMask("Player")))
+        {
+            // If something is above, don't stand up
+            return;
+        }
+
         myAnimator.SetBool("isCrouch", false);
         isCrouching = false;
         controller.height = originalHeight;
-        controller.center = new Vector3(0, 0.37f, 0);
+        controller.center = new Vector3(0, originalHeight / 2f, 0); // Reset center to original height
     }
 
     void FixedUpdate()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        if (horizontalMove > 0)
+        // Calculate target horizontal velocity based on input
+        float targetHorizontalVelocity = horizontalInput * runSpeed;
+
+        // Apply damping to current horizontal velocity
+        float dampingFactor = controller.isGrounded ? groundDamping : airDamping;
+        currentHorizontalVelocity = Mathf.Lerp(currentHorizontalVelocity, targetHorizontalVelocity, dampingFactor * Time.fixedDeltaTime);
+
+        // Apply rotation based on movement direction
+        if (currentHorizontalVelocity > 0.1f) // Use a small threshold to avoid rotation jitter when nearly stopped
         {
             myMesh.transform.rotation = Quaternion.Euler(0, 90, 0);
         }
-        else if (horizontalMove < 0)
+        else if (currentHorizontalVelocity < -0.1f) // Use a small threshold
         {
             myMesh.transform.rotation = Quaternion.Euler(0, -90, 0);
         }
 
-        // Pergerakan Horizontal
-        Vector3 move = transform.right * horizontalMove * Time.fixedDeltaTime;
+        // Pergerakan Horizontal (using currentHorizontalVelocity)
+        Vector3 move = transform.right * currentHorizontalVelocity * Time.fixedDeltaTime;
 
         // Gravitasi
         if (controller.isGrounded && velocity.y < 0)
@@ -113,7 +134,7 @@ public class CharacterMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "crouchArea")
+        if (other.gameObject.CompareTag("crouchArea")) // Use CompareTag for efficiency
         {
             isOnCrouchArea = true;
         }
@@ -121,7 +142,7 @@ public class CharacterMovement : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "crouchArea")
+        if (other.gameObject.CompareTag("crouchArea")) // Use CompareTag for efficiency
         {
             isOnCrouchArea = false;
             DoneCrouch();
