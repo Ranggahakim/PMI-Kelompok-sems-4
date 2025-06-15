@@ -6,7 +6,7 @@ public class CharacterMovement : MonoBehaviour
     public float runSpeed = 40f;
     public float jumpHeight = 2f;
     public float gravity = -9.81f;
-    public float crouchScale = 0.5f;
+    public float crouchSpeed = 0.5f;
     public float groundDamping = 20f; // NEW: How quickly horizontal movement slows down on the ground
     public float airDamping = 0.5f;   // NEW: How quickly horizontal movement slows down in the air
 
@@ -27,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("crouching")]
 
     bool isOnCrouchArea;
+    public GameObject originalMesh;
 
     void Start()
     {
@@ -58,10 +59,12 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             myAnimator.SetBool("isCrouch", true);
+            myAnimator.SetTrigger("IsStartCrouch");
             isCrouching = true;
-            controller.height = originalHeight * crouchScale;
+            Debug.Log("crouch");
+            // controller.height = originalHeight * crouchScale;
             // Adjust center based on the new height
-            controller.center = new Vector3(0, originalHeight * crouchScale / 2f, 0);
+            // controller.center = new Vector3(0, originalHeight * crouchScale / 2f, 0);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
@@ -85,14 +88,14 @@ public class CharacterMovement : MonoBehaviour
 
         myAnimator.SetBool("isCrouch", false);
         isCrouching = false;
-        controller.height = originalHeight;
-        controller.center = new Vector3(0, originalHeight / 2f, 0); // Reset center to original height
+        // controller.height = originalHeight;
+        // controller.center = new Vector3(0, originalHeight / 2f, 0); // Reset center to original height
     }
 
     void FixedUpdate()
     {
         // Calculate target horizontal velocity based on input
-        float targetHorizontalVelocity = horizontalInput * runSpeed;
+        float targetHorizontalVelocity = horizontalInput * runSpeed * (isCrouching ? .5f : 1);
 
         // Apply damping to current horizontal velocity
         float dampingFactor = controller.isGrounded ? groundDamping : airDamping;
