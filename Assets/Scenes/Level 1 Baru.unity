@@ -7602,6 +7602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4065475043150901866, guid: 90a5cf15e0660e848a399e847084b792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 1 Baru
+      objectReference: {fileID: 0}
     - target: {fileID: 5653457285554337777, guid: 90a5cf15e0660e848a399e847084b792, type: 3}
       propertyPath: m_Pivot.x
       value: 0

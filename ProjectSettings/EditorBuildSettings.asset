@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: f1a21dfdb42e9754aae5b87904887ab8
+  - enabled: 1
+    path: Assets/Scenes/Level 1 Baru.unity
+    guid: d11b290d80fd4e444822eafe68f4cb18
+  - enabled: 1
+    path: Assets/Scenes/Level 2 Baru.unity
+    guid: 73cde6f7188811c4ab704c005710e5e4
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 3cc31998b37701b42a517822cfbc1dab, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 512fef728e82ee844bca964b83372ffd, type: 2}

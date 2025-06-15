@@ -62,14 +62,16 @@ public class CharacterMovement : MonoBehaviour
             myAnimator.SetTrigger("IsStartCrouch");
             isCrouching = true;
             Debug.Log("crouch");
-            // controller.height = originalHeight * crouchScale;
+            originalMesh.SetActive(false);
             // Adjust center based on the new height
-            // controller.center = new Vector3(0, originalHeight * crouchScale / 2f, 0);
+            controller.height = 1;
+            controller.center = new Vector3(0, 0, 0);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             if (!isOnCrouchArea)
             {
+            originalMesh.SetActive(true);
                 DoneCrouch();
             }
         }
@@ -88,6 +90,8 @@ public class CharacterMovement : MonoBehaviour
 
         myAnimator.SetBool("isCrouch", false);
         isCrouching = false;
+            controller.height = 1.8f;
+            controller.center = new Vector3(0, 0.37f, 0);
         // controller.height = originalHeight;
         // controller.center = new Vector3(0, originalHeight / 2f, 0); // Reset center to original height
     }

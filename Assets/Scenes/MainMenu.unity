@@ -4083,41 +4083,41 @@ MonoBehaviour:
   dialogues:
   - dialogueCodes:
     - charIndex: 0
-      charImg: {fileID: 21300000, guid: fabc64c503b892a4ab934b6fa57014f3, type: 3}
+      charImg: {fileID: 21300000, guid: 04cc405bc83352f498e99574a8262a0a, type: 3}
       dialogueKey: 1.1
     - charIndex: 1
-      charImg: {fileID: 21300000, guid: d598a73bf1cbaef4d81d6b81d8f7b9b5, type: 3}
+      charImg: {fileID: 21300000, guid: 9bf9f1ab4872a3641b5c98e55d6b5c8b, type: 3}
       dialogueKey: 1.2
     - charIndex: 1
-      charImg: {fileID: 21300000, guid: c885f421147a74a4aa0396e462a73a3b, type: 3}
+      charImg: {fileID: 21300000, guid: ffada86562cb8d24db6034d552a06657, type: 3}
       dialogueKey: 1.3
     - charIndex: 0
-      charImg: {fileID: 21300000, guid: 995a95dfdf88a584da7c8cfd9c7c2d37, type: 3}
+      charImg: {fileID: 21300000, guid: 7fd8253714a0d3446b38ae73273dcc27, type: 3}
       dialogueKey: 1.4
     - charIndex: 1
-      charImg: {fileID: 21300000, guid: d598a73bf1cbaef4d81d6b81d8f7b9b5, type: 3}
+      charImg: {fileID: 21300000, guid: 9bf9f1ab4872a3641b5c98e55d6b5c8b, type: 3}
       dialogueKey: 1.5
     - charIndex: 0
-      charImg: {fileID: 21300000, guid: 7fc1fd346870ee847b673492ed827418, type: 3}
+      charImg: {fileID: 21300000, guid: 52865519584c37a44897cccd69ce7b20, type: 3}
       dialogueKey: 1.6
     - charIndex: 0
-      charImg: {fileID: 21300000, guid: 7fc1fd346870ee847b673492ed827418, type: 3}
+      charImg: {fileID: 21300000, guid: 52865519584c37a44897cccd69ce7b20, type: 3}
       dialogueKey: 1.7
   - dialogueCodes:
     - charIndex: 1
-      charImg: {fileID: 21300000, guid: dca6d6562f7847645b6c5126869aec0f, type: 3}
+      charImg: {fileID: 21300000, guid: 645634059b260354aa7ebd57dbca5015, type: 3}
       dialogueKey: 2.1
     - charIndex: 0
-      charImg: {fileID: 21300000, guid: 995a95dfdf88a584da7c8cfd9c7c2d37, type: 3}
+      charImg: {fileID: 21300000, guid: 7fd8253714a0d3446b38ae73273dcc27, type: 3}
       dialogueKey: 2.2
     - charIndex: 1
-      charImg: {fileID: 21300000, guid: c885f421147a74a4aa0396e462a73a3b, type: 3}
+      charImg: {fileID: 21300000, guid: ffada86562cb8d24db6034d552a06657, type: 3}
       dialogueKey: 2.3
     - charIndex: 1
-      charImg: {fileID: 21300000, guid: dca6d6562f7847645b6c5126869aec0f, type: 3}
+      charImg: {fileID: 21300000, guid: 645634059b260354aa7ebd57dbca5015, type: 3}
       dialogueKey: 2.4
     - charIndex: 0
-      charImg: {fileID: 21300000, guid: 7fc1fd346870ee847b673492ed827418, type: 3}
+      charImg: {fileID: 21300000, guid: 52865519584c37a44897cccd69ce7b20, type: 3}
       dialogueKey: 2.5
   char1: {fileID: 2018309356}
   char2: {fileID: 1687349064}
@@ -8990,7 +8990,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level 1
+          m_StringArgument: Level 1 Baru
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 607797689}
@@ -13229,7 +13229,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level 2
+          m_StringArgument: Level 2 Baru
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 607797689}

@@ -329,11 +329,12 @@ MonoBehaviour:
   runSpeed: 5
   jumpHeight: 2
   gravity: -9.81
-  crouchScale: 0.5
+  crouchSpeed: 0.5
   groundDamping: 20
   airDamping: 0.5
   myMesh: {fileID: 2384854212989741087}
   myAnimator: {fileID: 6250469825844292670}
+  originalMesh: {fileID: 5894852637417664598}
 --- !u!143 &9090748123809439395
 CharacterController:
   m_ObjectHideFlags: 0
@@ -463,7 +464,9 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tFrom animation clip 'crouchin2'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
