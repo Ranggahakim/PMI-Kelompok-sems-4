@@ -759,7 +759,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 488747389512335981, guid: 4218c08bd815c9b41b83e2849a26bc9d, type: 3}
       propertyPath: m_text
-      value: Gunakan S/D untuk bergerak
+      value: Gunakan A/D untuk bergerak
       objectReference: {fileID: 0}
     - target: {fileID: 5868293506669528845, guid: 4218c08bd815c9b41b83e2849a26bc9d, type: 3}
       propertyPath: m_Name
